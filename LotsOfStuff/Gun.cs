@@ -39,6 +39,10 @@
                 NumberOfBullets--;
             }
         }
+        public override string ToString()
+        {
+            string resultado = "Gun\n\tBase Weight: " + baseWeight.ToString() + "\n\tTotal Weight: " + (baseWeight + (NumberOfBullets * bulletWeight)) + "\n\tNumber of Bullets: " + NumberOfBullets.ToString() + "\n\tValue: " + Value.ToString();
+            return resultado;
+        }
     }
-
 }

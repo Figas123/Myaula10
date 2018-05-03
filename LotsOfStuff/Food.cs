@@ -34,6 +34,10 @@
             Type = type;
             Weight = weight;
         }
-
+        public override string ToString()
+        {
+            string resultado = Type.ToString() + "\n\tDays: " + this.days.ToString() + "\n\tWeight: " + Weight.ToString() + "\n\tValue: " + Value.ToString();
+            return resultado;
+        }
     }
 }
