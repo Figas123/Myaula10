@@ -77,5 +77,10 @@ namespace Aula10
             }
             return stuff[index];
         }
+        public override string ToString()
+        {
+            string resultado = "Bag\n\tNumber of Items: " + StuffCount.ToString() + "\n\tTotal Weight: " + Weight.ToString() + "\n\tTotal Value: " + Value.ToString();
+            return resultado;
+        }
     }
 }
