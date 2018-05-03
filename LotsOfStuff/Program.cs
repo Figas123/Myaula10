@@ -36,6 +36,8 @@ namespace Aula10
             // 200 gramas de fruta fresca
             p.BagOfStuff.AddThing(new Food(FoodType.Fruit, 0, 0.200f));
 
+            p.BagOfStuff.AddThing(new Gun(1.5f, 0.050f, 10, 250));
+
             // Quantos itens tem o jogador na mochila?
             Console.WriteLine($"Nº de itens na mochila: {p.BagOfStuff.StuffCount}");
 
