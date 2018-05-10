@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 
 namespace Aula10
 {
@@ -10,7 +11,7 @@ namespace Aula10
             get
             {
                 float totalValue = 0;
-                foreach(IStuff s in stuff)
+                foreach (IStuff s in stuff)
                 {
                     if (s != null) {
                         totalValue += s.Value;
@@ -36,33 +37,25 @@ namespace Aula10
         }
 
         /// <summary>Array que contém os itens da mochila</summary>
-        private IStuff[] stuff;
+        private ArrayList stuff;
 
         /// <summary>Número de itens na mochila</summary>
-        public int StuffCount { get; private set; }
+        public int StuffCount { get { return stuff.Count; } }
 
         /// <summary>Construtor que cria uma nova instância de mochila</summary>
         /// <param name="bagSize">Número máximo de itens que é possível colocar na mochila</param>
         public Bag(int bagSize)
         {
-            stuff = new IStuff[bagSize];
-            StuffCount = 0;
+            stuff = new ArrayList(bagSize);
         }
 
         /// <summary>Colocar um item na mochila</summary>
         /// <param name="aThing">Item a colocar na mochila</param>
         public void AddThing(IStuff aThing)
         {
-            // Será que temos espaço na mochila?
-            if (StuffCount >= stuff.Length)
-            {
-                // Senão tivermos podemos "lançar" uma exceção
-                throw new InvalidOperationException("Bag is already full!");
-            }
-
             // Adicionar o item à mochila e depois incrementar o
             // número de coisas na mochila
-            stuff[StuffCount++] = aThing;
+            stuff.Add(aThing);
         }
 
         /// <summary>Observar um item da mochila sem o remover da mesma</summary>
@@ -70,12 +63,12 @@ namespace Aula10
         /// <returns>Item a ser observado</returns>
         public IStuff GetThing(int index)
         {
-            if (index >= StuffCount)
+            if (index > stuff.Count)
             {
                 // Senão existir um item no local indicado, "lançar" uma exceção
                 throw new InvalidOperationException("Bag doesn't have that much stuff!");
             }
-            return stuff[index];
+            return stuff[index] as IStuff;
         }
         public override string ToString()
         {
