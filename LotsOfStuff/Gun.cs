@@ -41,7 +41,10 @@
         }
         public override string ToString()
         {
-            string resultado = "Gun\n\t\tBase Weight: " + baseWeight.ToString() + "\n\t\tTotal Weight: " + (baseWeight + (NumberOfBullets * bulletWeight)) + "\n\t\tNumber of Bullets: " + NumberOfBullets.ToString() + "\n\t\tValue: " + Value.ToString();
+            string resultado = "Gun\n\t\tBase Weight: " + baseWeight.ToString() +
+                "\n\t\tTotal Weight: " + (baseWeight + (NumberOfBullets * bulletWeight)) +
+                "\n\t\tNumber of Bullets: " + NumberOfBullets.ToString() +
+                "\n\t\tValue: " + Value.ToString();
             return resultado;
         }
     }
