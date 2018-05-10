@@ -23,6 +23,8 @@ namespace Aula10
             // Instanciar um jogador com 70 quilos
             Player p = new Player(70.0f);
 
+            Console.WriteLine("(Starting) " + p);
+
             Bag otherbag;
             //
             // Adicionar vários itens à mochila do jogador:
@@ -48,6 +50,8 @@ namespace Aula10
 
             // Adicionar o otherbag à bag do jogador
             p.BagOfStuff.Add(otherbag);
+            
+            Console.WriteLine(p);
 
             // Quantos itens tem o jogador na mochila?
             Console.WriteLine(p.BagOfStuff);
@@ -62,6 +66,7 @@ namespace Aula10
                 }
             }
             Console.WriteLine("\n(After shooting gun) " + p.BagOfStuff);
+            Console.WriteLine("\n(After shooting gun) " + p);
         }
     }
 }
