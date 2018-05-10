@@ -23,6 +23,7 @@ namespace Aula10
             // Instanciar um jogador com 70 quilos
             Player p = new Player(70.0f);
 
+            Bag otherbag;
             //
             // Adicionar vários itens à mochila do jogador:
             //
@@ -36,6 +37,18 @@ namespace Aula10
             // 200 gramas de fruta fresca
             p.BagOfStuff.AddThing(new Food(FoodType.Fruit, 0, 0.200f));
 
+            Console.WriteLine("\n(Before 2º bag) " + p.BagOfStuff);
+
+            // Novo bag
+            otherbag = new Bag(5);
+            // 1kg de fruta com 1 dia
+            otherbag.AddThing(new Food(FoodType.Meat, 1, 1f));
+            // 500 gramas de fruta com 2 dias
+            otherbag.AddThing(new Food(FoodType.Vegetables, 2, 0.5f));
+
+            // Adicionar o otherbag à bag do jogador
+            p.BagOfStuff.AddThing(otherbag);
+
             // Quantos itens tem o jogador na mochila?
             Console.WriteLine(p.BagOfStuff);
             // Percorrer itens na mochila e tentar "imprimir" cada um
@@ -48,7 +61,7 @@ namespace Aula10
                     (aThing as Gun).Shoot();
                 }
             }
-            Console.WriteLine("\n\t" + p.BagOfStuff);
+            Console.WriteLine("\n(After shooting gun) " + p.BagOfStuff);
         }
     }
 }
