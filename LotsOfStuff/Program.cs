@@ -73,7 +73,7 @@ namespace Aula10
                 "\nBag has food?" + p.BagOfStuff.ContainsItemOfType<Food>() +
                 "\nBag has bag?" + p.BagOfStuff.ContainsItemOfType<Bag>() +
                 "\nOtherBag has another bag?" + otherbag.ContainsItemOfType<Bag>());
-            foreach( Food f in p.BagOfStuff.GetItemOfType<Food>())
+            foreach( Food f in p.BagOfStuff.BetterGetItemOfType<Food>())
             {
                 Console.WriteLine(f);
             }

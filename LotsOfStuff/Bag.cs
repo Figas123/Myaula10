@@ -31,6 +31,17 @@ namespace Aula10
             return lst;
         }
 
+        public IEnumerable<T> BetterGetItemOfType<T>() where T : IStuff
+        {
+            foreach (IStuff thing in this)
+            {
+                if (thing is T)
+                {
+                    yield return (T)thing;
+                }
+            }
+        }
+
         public float Karma
         {
             get
