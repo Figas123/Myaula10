@@ -17,6 +17,20 @@ namespace Aula10
             }
             return false;
         }
+
+        public IEnumerable<T> GetItemOfType<T>() where T : class, IStuff
+        {
+            List<T> lst = new List<T>();
+            foreach(IStuff thing in this)
+            {
+                if (thing is T)
+                {
+                    lst.Add(thing as T);
+                }
+            }
+            return lst;
+        }
+
         public float Karma
         {
             get
