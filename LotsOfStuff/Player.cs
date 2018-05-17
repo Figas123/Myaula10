@@ -1,9 +1,15 @@
 ﻿namespace Aula10
 {
     /// <summary>Esta classe representa um jogador num jogo</summary>
-    public class Player : IHasWeight
+    public class Player : IHasWeight , IHasKarma
     {
-
+        public float Karma
+        {
+            get
+            {
+                return BagOfStuff.Karma;
+            }
+        }
         /// <summary>Máximo de items na mochila (variável de classe, constante, implicitamente static)</summary>
         private const int maxBagItems = 5;
 
@@ -34,7 +40,8 @@
         {
             string resultado = $"Player\n\tTotal Weight: {Weight:f2}" +
                 $"\n\tNumber of items in bag: {BagOfStuff.Count:f0}" +
-                $"\n\tPercentage of what weight is from the bag: {(BagOfStuff.Weight / Weight):p2}";
+                $"\n\tPercentage of what weight is from the bag: {(BagOfStuff.Weight / Weight):p2}" +
+                $"\n\tAverage Karma: {Karma:f2}";
             return resultado;
         }
     }

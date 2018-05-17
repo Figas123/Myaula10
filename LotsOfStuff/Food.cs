@@ -38,7 +38,7 @@
         {
             string resultado = $"{Type} \n\t\tDays: {this.days:f2}" +
                 $"\n\t\tWeight: {Weight:f2} \n\t\tValue: {Value:c2}" +
-                $"\n\t\tKarma:; {Karma:f2}";
+                $"\n\t\tKarma: {Karma:f2}";
             return resultado;
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Aula10
 {
-    public abstract class ItemWithKarma
+    public abstract class ItemWithKarma : IHasKarma
     {
         private static Random r = new Random();
         public virtual float Karma { get; }

@@ -4,8 +4,27 @@ using System.Collections.Generic;
 namespace Aula10
 {
     /// <summary>Classe que representa uma mochila ou saco que contem itens</summary>
-    public class Bag : List<IStuff>, IStuff
+    public class Bag : List<IStuff>, IStuff, IHasKarma
     {
+        public float Karma
+        {
+            get
+            {
+                int CountKarma = 0;
+                float total = 0;
+
+                foreach (IStuff thing in this)
+                {
+                    if (thing is IHasKarma)
+                    {
+                        total += (thing as IHasKarma).Karma;
+                        CountKarma++;
+                    }
+                }
+                return total / CountKarma;
+            }
+        }
+
         public float Value
         {
             get
@@ -37,11 +56,12 @@ namespace Aula10
         {
 
         }
-        
+
         public override string ToString()
         {
             string resultado = $"Bag\n\tNumber of Items: {Count:f0}" +
-                $"\n\tTotal Weight: {Weight:f2}\n\tTotal Value: {Value:c2}";
+                $"\n\tTotal Weight: {Weight:f2}\n\tTotal Value: {Value:c2}" +
+                $"\n\tAverage Karma: {Karma:f2}";
             return resultado;
         }
     }
