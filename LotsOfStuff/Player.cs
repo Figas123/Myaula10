@@ -32,9 +32,9 @@
 
         public override string ToString()
         {
-            string resultado = "Player\n\tTotal Weight: " + Weight +
-                "\n\tNumber of items in bag: " + BagOfStuff.Count +
-                "\n\tPercentage of what weight is from the bag: " + ((BagOfStuff.Weight / Weight) * 100);
+            string resultado = $"Player\n\tTotal Weight: {Weight:f2}" +
+                $"\n\tNumber of items in bag: {BagOfStuff.Count:f0}" +
+                $"\n\tPercentage of what weight is from the bag: {(BagOfStuff.Weight / Weight):p2}";
             return resultado;
         }
     }

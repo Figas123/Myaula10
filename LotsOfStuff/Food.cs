@@ -36,8 +36,8 @@
         }
         public override string ToString()
         {
-            string resultado = Type.ToString() + "\n\t\tDays: " + this.days.ToString() +
-                "\n\t\tWeight: " + Weight.ToString() + "\n\t\tValue: " + Value.ToString();
+            string resultado = $"{Type} \n\t\tDays: {this.days:f2}" +
+                $"\n\t\tWeight {Weight:f2} \n\t\tValue: {Value:c2}";
             return resultado;
         }
     }

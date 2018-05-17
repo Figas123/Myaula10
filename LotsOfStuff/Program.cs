@@ -10,6 +10,8 @@ namespace Aula10
         /// <param name="args">Ignoramos os argumentos de linha de comandos neste programa</param>
         public static void Main(string[] args)
         {
+            // Para poder adicionar caracters UNICODE <----
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
             // Criar uma nova instância de Program e
             // invocar o método TestProjet na instância criada
             Program prog = new Program();
@@ -39,7 +41,7 @@ namespace Aula10
             // 200 gramas de fruta fresca
             p.BagOfStuff.Add(new Food(FoodType.Fruit, 0, 0.200f));
 
-            Console.WriteLine("\n(Before 2º bag) " + p.BagOfStuff);
+            Console.WriteLine("\n(Before second bag) " + p.BagOfStuff);
 
             // Novo bag
             otherbag = new Bag(5);

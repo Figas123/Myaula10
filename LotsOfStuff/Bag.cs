@@ -40,8 +40,8 @@ namespace Aula10
         
         public override string ToString()
         {
-            string resultado = "Bag\n\tNumber of Items: " + Count.ToString() +
-                "\n\tTotal Weight: " + Weight.ToString() + "\n\tTotal Value: " + Value.ToString();
+            string resultado = $"Bag\n\tNumber of Items: {Count:f0}" +
+                $"\n\tTotal Weight: {Weight:f2}\n\tTotal Value: {Value:c2}";
             return resultado;
         }
     }
