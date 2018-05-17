@@ -6,6 +6,17 @@ namespace Aula10
     /// <summary>Classe que representa uma mochila ou saco que contem itens</summary>
     public class Bag : List<IStuff>, IStuff, IHasKarma
     {
+        public bool ContainsItemOfType<T>() where T : IStuff
+        {
+            foreach (IStuff thing in this)
+            {
+                if (thing is T)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
         public float Karma
         {
             get

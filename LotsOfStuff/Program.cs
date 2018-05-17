@@ -69,6 +69,10 @@ namespace Aula10
             }
             Console.WriteLine("\n(After shooting gun) " + p.BagOfStuff);
             Console.WriteLine("\n(After shooting gun) " + p);
+            Console.WriteLine("\nBag has gun?" + p.BagOfStuff.ContainsItemOfType<Gun>() +
+                "\nBag has food?" + p.BagOfStuff.ContainsItemOfType<Food>() +
+                "\nBag has bag?" + p.BagOfStuff.ContainsItemOfType<Bag>() +
+                "\nOtherBag has another bag?" + otherbag.ContainsItemOfType<Bag>());
         }
     }
 }
