@@ -10,24 +10,18 @@ namespace Aula10
     {
         static void Main(string[] args)
         {
-            Guarda3<string> g3s = new Guarda3<string>();
-            Guarda3<float> g3f = new Guarda3<float>();
+            Guarda3<string> g3s = new Guarda3<string>() { "Ola", "Adeus", "LaLa" };
+            Guarda3<float> g3f = new Guarda3<float>() { 2.3F, 5.6F, -4F };
 
-            g3s.SetItem(1, "Ola");
-            g3s.SetItem(2, "Adeus");
-            g3s.SetItem(3, "LaLa");
+            foreach(string s in g3s)
+            {
+                Console.WriteLine(s);
+            }
 
-            g3f.SetItem(1, 2.3F);
-            g3f.SetItem(2, 5.7F);
-            g3f.SetItem(2, -4F);
-
-            Console.WriteLine(g3s.GetItem(1));
-            Console.WriteLine(g3s.GetItem(2));
-            Console.WriteLine(g3s.GetItem(3));
-            Console.WriteLine(g3f.GetItem(1));
-            Console.WriteLine(g3f.GetItem(2));
-            Console.WriteLine(g3f.GetItem(3));
-
+            foreach (float f in g3f)
+            {
+                Console.WriteLine(f);
+            }
         }
     }
 }
